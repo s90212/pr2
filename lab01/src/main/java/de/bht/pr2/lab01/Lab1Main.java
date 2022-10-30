@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class Lab1Main {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws StudentParseException, RegistrationNumberException, WrongCourseOfStudiesException, NotPaidTuitionFeeException {
     // Daten fuer Studierenden als Strings
     List<String> data = new ArrayList<String>();
     data.add("Anna Alt,70001,Medieninformatik,312");
@@ -44,8 +44,12 @@ public class Lab1Main {
     // Parse each line ...
     for (String datenZeile : data) {
       // ... and try to create a Student object
-      Student student = new Student(datenZeile);
-      students.add(student);
+      try {
+        Student student = new Student(datenZeile);
+        students.add(student);
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
     }
 
     // Print all students which could be parsed
