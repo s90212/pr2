@@ -21,6 +21,7 @@ public class Student {
    * @param dataRow a comma-separated row describing a student object
    */
   public Student(String dataRow) throws StudentParseException, RegistrationNumberException, WrongCourseOfStudiesException, NotPaidTuitionFeeException {
+
     //check Datenzeile
     String[] list = dataRow.split(",");
     if (list.length != 4) throw new StudentParseException("Data not in the right format or missing: " + dataRow);
@@ -43,7 +44,7 @@ public class Student {
     int paid = Integer.parseInt(list[3]);
     if (paid < 312) throw new NotPaidTuitionFeeException("Tuition fee not paid fully. " + (312 - paid) + " Euro missing.");
 
-    //if all checks went through
+    //execute if all checks went through
     this.name = list[0];
     this.registrationNumber = Integer.parseInt(mN);
     this.courseOfStudies = course;
