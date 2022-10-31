@@ -42,7 +42,7 @@ public class Student {
 
     //check Studiengebuehren
     int paid = Integer.parseInt(list[3]);
-    if (paid < 312) throw new NotPaidTuitionFeeException("Tuition fee not paid fully. " + (312 - paid) + " Euro missing.");
+    if (paid < TUITION_FEE) throw new NotPaidTuitionFeeException("Tuition fee not paid fully. " + (TUITION_FEE - paid) + " Euro missing.");
 
     //execute if all checks went through
     this.name = list[0];
