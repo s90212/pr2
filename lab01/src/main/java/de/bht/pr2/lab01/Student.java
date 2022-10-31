@@ -49,4 +49,11 @@ public class Student {
     this.registrationNumber = Integer.parseInt(mN);
     this.courseOfStudies = course;
   }
+
+  public String getName() {
+    return this.name;
+  }
+  public String toString() {
+    return this.name + ", " + this.registrationNumber + ", " + this.courseOfStudies;
+  }
 }

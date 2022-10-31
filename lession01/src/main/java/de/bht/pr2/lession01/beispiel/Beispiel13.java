@@ -17,7 +17,7 @@ public class Beispiel13 {
       ArithmeticException e = new ArithmeticException("Nenner ist null");
       throw e;
     }
-
+    System.out.println("lol");
     int division = zaehler / nenner;
   }
 
@@ -43,14 +43,14 @@ public class Beispiel13 {
 
   public static void main(String[] args) {
     try {
-      lassUnsWerfen();
+      //lassUnsWerfen();
       /* TODO: Probiere statt 'lassUnsWerfen' auch mit 'lassUnsFangen' */
-      //lassUnsFangen();
+      lassUnsFangen();
     } catch (ArithmeticException e) {
       e.printStackTrace();
 
       /* TODO: Versuch es auch mal mit System.out. Was ist der Unterschied? */
-      // e.printStackTrace(System.out);
+      e.printStackTrace(System.out);
     }
   }
 }
