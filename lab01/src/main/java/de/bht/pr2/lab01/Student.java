@@ -56,4 +56,13 @@ public class Student {
   public String toString() {
     return this.name + ", " + this.registrationNumber + ", " + this.courseOfStudies;
   }
+
+  public int getRegistrationNumber() {
+    return registrationNumber;
+  }
+
+  public String getCourseOfStudies() {
+    return courseOfStudies;
+  }
+
 }
