@@ -1,5 +1,10 @@
 package de.bht.pr2.lab03.part4;
 
+import de.bht.pr2.lab03.store.*;
+
+import java.util.HashSet;
+import java.util.List;
+
 public class GroupByBookType {
 
   public static void main(String[] args) {
@@ -25,5 +30,23 @@ Hoerbuecher Anzahl: 5
 	Hoerbuch: Harry Potter - alle 7 Baende (2018)
 
      */
+
+    HashSet<Book> bookList = new HashSet<>();
+    HashSet<Book> eBookList = new HashSet<>();
+    HashSet<Book> audioBookList = new HashSet<>();
+    List<String> soldBookData = BookStore.getSoldBooks();
+    List<Book> soldBooks = Book.parseArray(soldBookData);
+    for (Book book : soldBooks) {
+      if (book instanceof EBook) eBookList.add(book);
+      else if (book instanceof AudioBook) audioBookList.add(book);
+      else bookList.add(book);
+    }
+    System.out.println("Buecher Anzahl: " + bookList.size());
+    for (Book book : bookList) System.out.println("  " + book.getType() + ": " + book.getTitle() + " (" + book.getEdition() + ")");
+    System.out.println("Ebuecher Anzahl: " + eBookList.size());
+    for (Book book : eBookList) System.out.println("  " + book.getType() + ": " + book.getTitle() + " (" + book.getEdition() + ")");
+    System.out.println("Hoerbuecher Anzahl: " + audioBookList.size());
+    for (Book book : audioBookList) System.out.println("  " + book.getType() + ": " + book.getTitle() + " (" + book.getEdition() + ")");
+
   }
 }
