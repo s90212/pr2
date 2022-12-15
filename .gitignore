@@ -26,3 +26,5 @@ workspace
 .idea
 
 target/
+lession07/src/test/resources/*.xml
+lession07/src/test/resources/*.json
